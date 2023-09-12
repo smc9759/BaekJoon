@@ -9,6 +9,7 @@ public:
 	void CreateBasket();
 	void PutTheBall(Basket& _basket);
 	int BallNumInside(int num) const { return basket[num]; };
+	void print();
 };
 
 void Basket::CreateBasket() {
@@ -38,17 +39,20 @@ void Basket::PutTheBall(Basket& _basket) {
 	}
 }
 
-//int Basket::BallNumInside(int num) const {
-//	return basket[num];
-//}
+//print the ball
+void Basket::print() {
+	for (int p = 0; p < N; p++)
+		std::cout << basket[p];
+}
 int main() {
 
 	Basket Mybasket;
 
 	Mybasket.CreateBasket();
 
+	Mybasket.PutTheBall(Mybasket);
 
-
+	Mybasket.print();
 
 }
 
