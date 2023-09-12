@@ -102,6 +102,7 @@ class Integer : Basket {
 	int N = 0;
 	int* integer;
 	int vCount=0;
+	int min, max = 0;
 public:
 	void CreateIntArray();
 	void PutInt(int how);
@@ -109,6 +110,8 @@ public:
 	int ReturnvCount() const { return vCount; };
 	int findvCount();
 	int lessthanvCount();
+	int FindMin();
+	int FindMax();
 };
 
 void Integer::CreateIntArray() {
@@ -145,13 +148,27 @@ void Integer::PutvCount() {
 	std::cin >> vCount;
 }
 
+int Integer::FindMin() {
+	min = integer[0];
+	for (int i = 0; i < N; i++) {
+		if (integer[i] < min) min = integer[i];
+	}
+	return min;
+}
+
+int Integer::FindMax() {
+	for (int i = 0; i < N; i++) {
+		if (integer[i] > max) max = integer[i];
+	}
+	return max;
+}
+
 int main() {
 	Integer Integers;
 	Integers.CreateIntArray();
-	Integers.PutvCount();
 	Integers.PutInt(0);
 
-	Integers.lessthanvCount();
+	std::cout << Integers.FindMin() << " " << Integers.FindMax();
 }
 
 
