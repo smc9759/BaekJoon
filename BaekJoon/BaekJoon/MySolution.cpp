@@ -1,32 +1,42 @@
 #include <iostream>
 
-int main() {
-
-	//int* basket[N];
-	//바구니 == 배열
-
-
+class basket {
+public:
 	int N, M = 0;
 	int i, j, k, tryout = 0;
-	//1 ≤ i ≤ j ≤ N, 1 ≤ k ≤ N)
+	int* basket = new int[N];
+	void CreateBasket();
+	
+};
+
+void basket::CreateBasket() {
 	std::cin >> N >> M;
-	char** basket = new char*[N];
 	for (int p = 0; p < N; p++) {
-		basket[p] = new char[N];
+		basket[p] = 0;
 	}
-	for (int p = 0; p < N; p++) {
-		for (int r = 0; r < N; r++) {
-			basket[p][r] = 0;
-		}
-	}
+}
+
+int main() {
+
+	basket Mybasket;
+
+	Mybasket.CreateBasket();
+
+
+
 	for (; tryout < M; tryout++) {
 		std::cin >> i >> j >> k;
-		if (i > N || j > N || k > N) {
+		if (i > N || j > N || k > N|| i>j) {
 			std::cout << "range error" << std::endl;
 		}
 		else {
 			// buffer = i j k
+			//is ball in?
 		}
 
 	}
+}
+
+int BallNumberInside const(int* _basket) {
+
 }
