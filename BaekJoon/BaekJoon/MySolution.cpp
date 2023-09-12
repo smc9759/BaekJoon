@@ -117,8 +117,9 @@ public:
 	int FindMin();
 	int FindMax();
 	void HomeWorkCheck();
-	void BubbleSorting();
+	void BubbleSorting(int n);
 	void Swap(int i, int j);
+	bool IsBubbleEnd(int i);
 };
 
 Integer::Integer() {
@@ -191,17 +192,34 @@ int Integer::FindMax() {
 
 void Integer::HomeWorkCheck() {
 
-	
+	BubbleSorting(N);
 	
 }
 
-void Integer::BubbleSorting() {
-	for (int i = 0; i < 30 - 1; i++) {
+void Integer::BubbleSorting(int n) {
+	int i, j, temp;
 
-		if (integer[i] > integer[i + 1])
-			Swap(i, i+1);
+	for (i = n - 1; i>0; i--) {
+		// 0 ~ (i-1)까지 반복
+		for (j = 0; j<i; j++) {
+			// j번째와 j+1번째의 요소가 크기 순이 아니면 교환
+			if (integer[j] < integer[j + 1]) {
+				temp = integer[j];
+				integer[j] = integer[j + 1];
+				integer[j + 1] = temp;
+			}
+		}
 	}
 }
+
+bool Integer::IsBubbleEnd(int i) {
+
+		if (integer[i] > integer[i + 1])
+			return false;
+	
+	return true;
+}
+
 
 int main() {
 	Integer Integers(30);
