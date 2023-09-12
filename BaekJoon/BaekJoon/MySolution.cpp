@@ -6,7 +6,7 @@ typedef enum {
 };
 
 class Basket {
-	int N, M = 0;
+	int N, M, nBskNum = 0;
 	int i, j, k, tryout = 0;
 	void Swap(int i, int j);
 
@@ -21,8 +21,9 @@ public:
 
 void Basket::CreateBasket() {
 	std::cin >> N >> M;
-	basket = new int[N];
-	for (int p = 0; p < N; p++) {
+	nBskNum = N + 1;
+	basket = new int[nBskNum];
+	for (int p = 0; p < nBskNum; p++) {
 		basket[p] = 0;
 	}
 }
@@ -35,18 +36,18 @@ void Basket::PutTheBall(int how) {
 		for (; tryout < M; tryout++) {
 			std::cin >> i >> j >> k;
 
-			if (i > N || j > N || k > N || i > j) {
+			if (i > nBskNum || j > nBskNum || k > nBskNum || i > j) {
 				std::cout << "range error" << std::endl;
 			}
 			else {
 				for (; i <= j; i++)
-					basket[i - 1] = k;
+					basket[i] = k;
 			}
 		}
 		break;
-	case SEQUENTLY: 
-		for (; tryout < N; tryout++) {
-			basket[tryout] = tryout+1;
+	case SEQUENTLY: // n4 nBskNum5 0123
+		for (; tryout < nBskNum; tryout++) {
+			basket[tryout] = tryout;
 		}
 		SwapBall();
 
@@ -55,17 +56,17 @@ void Basket::PutTheBall(int how) {
 	}
 
 }
-
+ 
 //print the ball
 void Basket::print() {
-	for (int p = 0; p < N; p++)
+	for (int p = 1; p < nBskNum; p++)
 		std::cout << basket[p] << " ";
 }
 
 void Basket::SwapBall() {
 	for (tryout = 0; tryout < M; tryout++) {
 		std::cin >> i >> j;
-		Swap(i-1, j-1);
+		Swap(i, j);
 	}
 }
 
