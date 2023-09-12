@@ -119,7 +119,7 @@ public:
 	void HomeWorkCheck();
 	void BubbleSorting(int n);
 	void Swap(int i, int j);
-	bool IsBubbleEnd(int i);
+	void print();
 };
 
 Integer::Integer() {
@@ -212,19 +212,17 @@ void Integer::BubbleSorting(int n) {
 	}
 }
 
-bool Integer::IsBubbleEnd(int i) {
-
-		if (integer[i] > integer[i + 1])
-			return false;
-	
-	return true;
+void Integer::print() {
+	for (int i = 0; i < N; i++) {
+		std::cout << integer[i] << " ";
+	}
 }
 
-
 int main() {
-	Integer Integers(30);
+	Integer Integers(30-2);
 	Integers.PutInt(0);
-	
+	Integers.HomeWorkCheck();
+	Integers.print();
 	std::cout << Integers.FindMin() << " " << Integers.FindMax();
 
 }
