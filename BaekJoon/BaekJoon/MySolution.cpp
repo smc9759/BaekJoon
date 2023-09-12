@@ -8,7 +8,7 @@ public:
 	int* basket = new int[N];
 	void CreateBasket();
 	void PutTheBall();
-	int BallNumInside(const Basket& _basket);
+	int BallNumInside(int num) const { return basket[num]; };
 };
 
 void Basket::CreateBasket() {
@@ -32,9 +32,9 @@ void Basket::PutTheBall() {
 	}
 }
 
-int BallNumInside(const Basket& _basket) {
-
-}
+//int Basket::BallNumInside(int num) const {
+//	return basket[num];
+//}
 int main() {
 
 	Basket Mybasket;
@@ -47,4 +47,3 @@ int main() {
 }
 
 
-}
