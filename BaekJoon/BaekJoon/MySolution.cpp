@@ -120,6 +120,7 @@ public:
 	void BubbleSorting(int n);
 	void Swap(int i, int j);
 	void print();
+	int missingHomework[2];
 };
 
 Integer::Integer() {
@@ -191,9 +192,19 @@ int Integer::FindMax() {
 }
 
 void Integer::HomeWorkCheck() {
+	int student_count = 0;
 
 	BubbleSorting(N);
 	
+	for (int i = 0; i < N-1; i++) {
+		if (integer[i] - integer[i + 1] != 1)
+		{
+			missingHomework[student_count] = integer[i+1]+1;
+			student_count++;
+		}
+	}
+	std::cout << missingHomework[0] << std::endl;
+	std::cout << missingHomework[1] << std::endl;
 }
 
 void Integer::BubbleSorting(int n) {
@@ -222,8 +233,8 @@ int main() {
 	Integer Integers(30-2);
 	Integers.PutInt(0);
 	Integers.HomeWorkCheck();
-	Integers.print();
-	std::cout << Integers.FindMin() << " " << Integers.FindMax();
+	//앞에서 뺴기 뒤어꺼가 1이 아니면 반환
+	//std::cout << Integers.FindMin() << " " << Integers.FindMax();
 
 }
 
