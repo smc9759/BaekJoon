@@ -45,7 +45,7 @@ void Basket::PutTheBall(int how) {
 		}
 		break;
 	case SEQUENTLY: 
-		for (; tryout < M; tryout++) {
+		for (; tryout <= N; tryout++) {
 			basket[tryout] = tryout+1;
 		}
 		SwapBall();
