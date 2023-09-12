@@ -1,5 +1,10 @@
 #include <iostream>
 
+typedef enum {
+	INPUT,
+	SEQUENTLY
+};
+
 class Basket {
 	int N, M = 0;
 	int i, j, k, tryout = 0;
@@ -7,7 +12,7 @@ class Basket {
 public:
 	int* basket;
 	void CreateBasket();
-	void PutTheBall();
+	void PutTheBall(int how);
 	int BallNumInside(int num) const { return basket[num]; };
 	void print();
 };
@@ -20,16 +25,16 @@ void Basket::CreateBasket() {
 	}
 }
 
-void Basket::PutTheBall() {
+void Basket::PutTheBall(int how) {
 	for (; tryout < M; tryout++) {
 		std::cin >> i >> j >> k;
 
-		if (i > N || j > N || k > N || i>j) {
+		if (i > N || j > N || k > N || i > j) {
 			std::cout << "range error" << std::endl;
 		}
 		else {
 			for (; i <= j; i++) 
-				basket[i -1] = k;
+				basket[i - 1 ] = k;
 		}
 	}
 }
