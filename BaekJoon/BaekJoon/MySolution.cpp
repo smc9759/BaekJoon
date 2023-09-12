@@ -7,7 +7,7 @@ class Basket {
 public:
 	int* basket = new int[N];
 	void CreateBasket();
-	void PutTheBall();
+	void PutTheBall(Basket& _basket);
 	int BallNumInside(int num) const { return basket[num]; };
 };
 
@@ -18,7 +18,7 @@ void Basket::CreateBasket() {
 	}
 }
 
-void Basket::PutTheBall() {
+void Basket::PutTheBall(Basket& _basket) {
 	for (; tryout < M; tryout++) {
 		std::cin >> i >> j >> k;
 		if (i > N || j > N || k > N || i>j) {
@@ -27,8 +27,14 @@ void Basket::PutTheBall() {
 		else {
 			// buffer = i j k
 			//is ball in?
-		}
+			for (; i < j; i++) {
+				//if (!_basket.BallNumInside[i]) {
+				//	//공이 들어있으면
 
+				//}
+				_basket.basket[i] = k;
+			}
+		}
 	}
 }
 
