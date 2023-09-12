@@ -9,6 +9,7 @@ class Basket {
 	int N, M, nBskNum = 0;
 	int i, j, k, tryout = 0;
 	void Swap(int i, int j);
+	void UpDn(int i, int j);
 
 public:
 	int* basket;
@@ -17,6 +18,7 @@ public:
 	void SwapBall();
 	int BallNumInside(int num) const { return basket[num]; };
 	void print();
+	void UpsideDown();
 };
 
 void Basket::CreateBasket() {
@@ -45,11 +47,11 @@ void Basket::PutTheBall(int how) {
 			}
 		}
 		break;
-	case SEQUENTLY: // n4 nBskNum5 0123
+	case SEQUENTLY: 
 		for (; tryout < nBskNum; tryout++) {
 			basket[tryout] = tryout;
 		}
-		SwapBall();
+
 
 		break;
 
@@ -78,6 +80,16 @@ void Basket::Swap(int i, int j) {
 	temp = 0;
 }
 
+void Basket::UpsideDown() {
+	for (tryout = 0; tryout < M; tryout++) {
+		std::cin >> i >> j;
+		UpDn(i, j);
+	}
+}
+
+void Basket::UpDn(int i, int j) {
+
+}
 
 int main() {
 
@@ -87,6 +99,9 @@ int main() {
 
 	Mybasket.PutTheBall(SEQUENTLY);
 
+	//Mybasket.SwapBall();
+	Mybasket.UpsideDown();
+	
 	Mybasket.print();
 
 }
