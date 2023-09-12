@@ -45,7 +45,7 @@ void Basket::PutTheBall(int how) {
 		}
 		break;
 	case SEQUENTLY: 
-		for (; tryout <= N; tryout++) {
+		for (; tryout < N; tryout++) {
 			basket[tryout] = tryout+1;
 		}
 		SwapBall();
@@ -65,7 +65,7 @@ void Basket::print() {
 void Basket::SwapBall() {
 	for (tryout = 0; tryout < M; tryout++) {
 		std::cin >> i >> j;
-		Swap(i, j);
+		Swap(i-1, j-1);
 	}
 }
 
