@@ -195,7 +195,7 @@ void Integer::HomeWorkCheck() {
 	int student_count = 0;
 
 	BubbleSorting(N);
-	
+	//now n = 28
 	for (int i = 0; i < N-1; i++) {
 		if (integer[i] - integer[i + 1] != 1)
 		{
@@ -203,8 +203,8 @@ void Integer::HomeWorkCheck() {
 			student_count++;
 		}
 	}
-	std::cout << missingHomework[0] << std::endl;
 	std::cout << missingHomework[1] << std::endl;
+	std::cout << missingHomework[0] << std::endl;
 }
 
 void Integer::BubbleSorting(int n) {
@@ -233,7 +233,7 @@ int main() {
 	Integer Integers(30-2);
 	Integers.PutInt(0);
 	Integers.HomeWorkCheck();
-	//앞에서 뺴기 뒤어꺼가 1이 아니면 반환
+	//숙제 안낸사람이 이어서 있으면 못찾음
 	//std::cout << Integers.FindMin() << " " << Integers.FindMax();
 
 }
