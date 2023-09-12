@@ -88,7 +88,10 @@ void Basket::UpsideDown() {
 }
 
 void Basket::UpDn(int i, int j) {
-
+	int ntry = (j - i + 1) /2;
+	for (int p=0; p < ntry; p++) {
+		Swap(i +p, j-p);
+	}
 }
 
 int main() {
