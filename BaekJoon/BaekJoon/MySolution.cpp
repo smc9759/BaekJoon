@@ -98,7 +98,7 @@ void Basket::UpDn(int i, int j) {
 
 
 
-class Integer : Basket {
+class Integer{
 	int N = 0;
 	int* integer;
 	int vCount=0;
@@ -157,6 +157,7 @@ int Integer::FindMin() {
 }
 
 int Integer::FindMax() {
+	max = integer[0];
 	for (int i = 0; i < N; i++) {
 		if (integer[i] > max) max = integer[i];
 	}
