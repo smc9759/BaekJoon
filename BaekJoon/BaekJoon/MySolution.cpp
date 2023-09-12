@@ -1,5 +1,7 @@
 #include <iostream>
 
+#include <algorithm>
+#include <stdlib.h>
 typedef enum {
 	INPUT,
 	SEQUENTLY
@@ -104,6 +106,8 @@ class Integer{
 	int vCount=0;
 	int min, max = 0;
 public:
+	Integer();
+	Integer(int numb);
 	void CreateIntArray();
 	void PutInt(int how);
 	void PutvCount();
@@ -112,7 +116,28 @@ public:
 	int lessthanvCount();
 	int FindMin();
 	int FindMax();
+	void HomeWorkCheck();
+	void BubbleSorting();
+	void Swap(int i, int j);
 };
+
+Integer::Integer() {
+	std::cin >> N;
+	integer = new int[N];
+}
+
+Integer::Integer(int numb) {
+	integer = new int[numb];
+	N = numb;
+}
+
+void Integer::Swap(int i, int j) {
+	int temp = 0;
+	temp = integer[i];
+	integer[i] = integer[j];
+	integer[j] = temp;
+	temp = 0;
+}
 
 void Integer::CreateIntArray() {
 	std::cin >> N;
@@ -164,12 +189,33 @@ int Integer::FindMax() {
 	return max;
 }
 
-int main() {
-	Integer Integers;
-	Integers.CreateIntArray();
-	Integers.PutInt(0);
+void Integer::HomeWorkCheck() {
 
+	
+	
+}
+
+void Integer::BubbleSorting() {
+	for (int i = 0; i < 30 - 1; i++) {
+
+		if (integer[i] > integer[i + 1])
+			Swap(i, i+1);
+	}
+}
+
+int main() {
+	Integer Integers(30);
+	Integers.PutInt(0);
+	
 	std::cout << Integers.FindMin() << " " << Integers.FindMax();
+
 }
 
 
+/*
+
+int a[100];
+
+sort(a, a+100);
+
+*/
