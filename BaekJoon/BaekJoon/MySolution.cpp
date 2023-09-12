@@ -94,19 +94,64 @@ void Basket::UpDn(int i, int j) {
 	}
 }
 
+
+
+
+
+class Integer : Basket {
+	int N = 0;
+	int* integer;
+	int vCount=0;
+public:
+	void CreateIntArray();
+	void PutInt(int how);
+	void PutvCount();
+	int ReturnvCount() const { return vCount; };
+	int findvCount();
+	int lessthanvCount();
+};
+
+void Integer::CreateIntArray() {
+	std::cin >> N;
+	integer = new int[N];
+}
+
+void Integer::PutInt(int how) {
+	int input = 0;
+	for (int i = 0; i < N; i++) {
+		std::cin >> input;
+		integer[i] = input;
+	}
+}
+int Integer::findvCount() {
+	int nNumb = 0;
+	for (int i = 0; i < N; i++) {
+		if (integer[i] == vCount)
+			nNumb++;
+	}
+	return nNumb;
+}
+
+int Integer::lessthanvCount() {
+	int nNumb = 0;
+	for (int i = 0; i < N; i++) {
+		if (integer[i] < vCount)
+			std::cout << integer[i] << " ";
+	}
+	return 0;
+}
+
+void Integer::PutvCount() {
+	std::cin >> vCount;
+}
+
 int main() {
+	Integer Integers;
+	Integers.CreateIntArray();
+	Integers.PutvCount();
+	Integers.PutInt(0);
 
-	Basket Mybasket;
-
-	Mybasket.CreateBasket();
-
-	Mybasket.PutTheBall(SEQUENTLY);
-
-	//Mybasket.SwapBall();
-	Mybasket.UpsideDown();
-	
-	Mybasket.print();
-
+	Integers.lessthanvCount();
 }
 
 
