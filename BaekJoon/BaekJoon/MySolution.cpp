@@ -234,6 +234,7 @@ int main() {
 	Integers.PutInt(0);
 	Integers.HomeWorkCheck();
 	//숙제 안낸사람이 이어서 있으면 못찾음
+
 	//std::cout << Integers.FindMin() << " " << Integers.FindMax();
 
 }
@@ -241,8 +242,29 @@ int main() {
 
 /*
 
-int a[100];
+int main() {
+int A[30] = { 0, };
+int index_submit = 0;
+for (int i = 0; i < 28; i++)
+{
+cin >> index_submit;
+A[index_submit-1] = 1;
+}
 
-sort(a, a+100);
+int* no_homework = new int[2];
+int count = 0;
+for (int i = 0; i < 30; i++)
+{
+if (A[i] == 0)
+{
+no_homework[count++] = i+1;
+}
+}
+
+cout << no_homework[0] << '\n' << no_homework[1];
+//하나씩 가다가 빠진거 저장
+//-> 배열 인덱스로 접근해서 flag를 켜줌
+return 0;
+}
 
 */
