@@ -1,0 +1,5 @@
+C:\Project\MFC\VC15\BaekJoon\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe.config
+C:\Project\MFC\VC15\BaekJoon\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe
+C:\Project\MFC\VC15\BaekJoon\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
+C:\Project\MFC\VC15\BaekJoon\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
+C:\Project\MFC\VC15\BaekJoon\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb

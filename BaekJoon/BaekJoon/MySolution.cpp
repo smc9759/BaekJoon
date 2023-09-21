@@ -18,7 +18,7 @@ public:
 	void CreateBasket();
 	void PutTheBall(int how);
 	void SwapBall();
-	int BallNumInside(int num) const { return basket[num]; };
+	int  BallNumInside(int num) const { return basket[num]; };
 	void print();
 	void UpsideDown();
 };
@@ -116,7 +116,7 @@ public:
 	int lessthanvCount();
 	int FindMin();
 	int FindMax();
-	void HomeWorkCheck();
+	void HomeWorkCheck(Integer& array);
 	void BubbleSorting(int n);
 	void Swap(int i, int j);
 	void print();
@@ -131,6 +131,8 @@ Integer::Integer() {
 Integer::Integer(int numb) {
 	integer = new int[numb];
 	N = numb;
+	for (int i = 0; i < N; i++)
+		integer[i] = 0;
 }
 
 void Integer::Swap(int i, int j) {
@@ -148,7 +150,8 @@ void Integer::CreateIntArray() {
 
 void Integer::PutInt(int how) {
 	int input = 0;
-	for (int i = 0; i < N; i++) {
+	integer[0] = 0;
+	for (int i = 1; i < N; i++) {
 		std::cin >> input;
 		integer[i] = input;
 	}
@@ -191,20 +194,23 @@ int Integer::FindMax() {
 	return max;
 }
 
-void Integer::HomeWorkCheck() {
-	int student_count = 0;
+void Integer::HomeWorkCheck(Integer& array) {
+	//int student_count = 0;
 
-	BubbleSorting(N);
+	//BubbleSorting(N);
 	//now n = 28
-	for (int i = 0; i < N-1; i++) {
-		if (integer[i] - integer[i + 1] != 1)
-		{
-			missingHomework[student_count] = integer[i+1]+1;
-			student_count++;
-		}
+	for (int i = 0; i < N-2; i++) {
+		integer[array.integer[i]] = 1;
+			//missingHomework[student_count] = integer[i+1]+1;
+			//student_count++;
+		
 	}
-	std::cout << missingHomework[1] << std::endl;
-	std::cout << missingHomework[0] << std::endl;
+	for (int i = 1; i < N; i++) {
+		if (integer[i] != 1)
+			std::cout << i << std::endl;
+	}
+	//std::cout << missingHomework[1] << std::endl;
+	//std::cout << missingHomework[0] << std::endl;
 }
 
 void Integer::BubbleSorting(int n) {
@@ -230,41 +236,14 @@ void Integer::print() {
 }
 
 int main() {
-	Integer Integers(30-2);
+	Integer Integers(30-1);
+	Integer StudentChk(31);
 	Integers.PutInt(0);
-	Integers.HomeWorkCheck();
-	//숙제 안낸사람이 이어서 있으면 못찾음
 
-	//std::cout << Integers.FindMin() << " " << Integers.FindMax();
+	StudentChk.HomeWorkCheck(Integers);
 
 }
 
-
-/*
-
-int main() {
-int A[30] = { 0, };
-int index_submit = 0;
-for (int i = 0; i < 28; i++)
-{
-cin >> index_submit;
-A[index_submit-1] = 1;
-}
-
-int* no_homework = new int[2];
-int count = 0;
-for (int i = 0; i < 30; i++)
-{
-if (A[i] == 0)
-{
-no_homework[count++] = i+1;
-}
-}
-
-cout << no_homework[0] << '\n' << no_homework[1];
-//하나씩 가다가 빠진거 저장
-//-> 배열 인덱스로 접근해서 flag를 켜줌
-return 0;
-}
-
-*/
+//배열두개
+//나머지
+//플래그

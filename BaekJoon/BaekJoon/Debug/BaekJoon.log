@@ -1,3 +1,4 @@
 ﻿  MySolution.cpp
+c:\project\mfc\vc15\baekjoon\baekjoon\baekjoon\mysolution.cpp(8): warning C4091: 'typedef ': ignored on left of '' when no variable is declared
   BaekJoon.vcxproj -> C:\Project\MFC\VC15\BaekJoon\BaekJoon\Debug\BaekJoon.exe
   BaekJoon.vcxproj -> C:\Project\MFC\VC15\BaekJoon\BaekJoon\Debug\BaekJoon.pdb (Partial PDB)
